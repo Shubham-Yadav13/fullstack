@@ -35,7 +35,7 @@ export class AppComponent  implements OnInit{
     });
 
     this.socket.on('connect', () => {
-      console.log('Connected to server');
+      // console.log('Connected to server');
       
     });
   //   this.socket.on('private', function(msg:any) {
@@ -45,11 +45,11 @@ export class AppComponent  implements OnInit{
   // });
 
     this.socket.on('newUser', (data: any) => {
-      console.log('DATA REFRESHED', data);
+      // console.log('DATA REFRESHED', data);
       const totalUsers = data?.message;
       if(data.id!==undefined || data.id!==null  || data.id!=='' )
       this.userId = data?.id;
-      console.log(this.userId,totalUsers);
+      // console.log(this.userId,totalUsers);
       
       this.totalUsers = totalUsers;
     //  this.totalUsersSubject.next(data?.message); // Update totalUsersSubject
@@ -58,9 +58,9 @@ export class AppComponent  implements OnInit{
 
     this.socket.on('all-messages',(res:any)=>{
       this.allMessages = res.data;
-      console.log(res);
+      // console.log(res);
       
-      console.log(this.allMessages);
+      // console.log(this.allMessages);
       
     })
 
