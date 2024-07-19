@@ -31,7 +31,7 @@ export class AppComponent  implements OnInit{
     // console.log(this.userId,'user ID');
 
   //  this.socket = io('http://localhost:4000', {
-    this.socket = io('http://172.16.4.140:4000',{
+    this.socket = io('https://backendchat-c7s9.onrender.com/',{
       transports: ['websocket', 'polling'], // Prefer WebSocket transport
     });
     
