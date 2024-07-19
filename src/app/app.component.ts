@@ -28,11 +28,13 @@ export class AppComponent  implements OnInit{
   
   }
   ngOnInit(): void {
-    console.log(this.userId,'user ID');
+    // console.log(this.userId,'user ID');
 
-    this.socket = io('http://localhost:4000', {
+  //  this.socket = io('http://localhost:4000', {
+    this.socket = io('http://172.16.4.140:4000',{
       transports: ['websocket', 'polling'], // Prefer WebSocket transport
     });
+    
 
     this.socket.on('connect', () => {
       // console.log('Connected to server');
